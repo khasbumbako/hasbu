@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galeri Khasbu Otomatis</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .navbar {
+      display: flex;
+      background: white;
+      padding: 10px 15px;
+      border-bottom: 3px solid #040403dd;
+      overflow-x: auto;
+    }
+    .nav-link {
+      margin-right: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      position: relative;
+    }
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      height: 3px;
+      width: 0;
+      background-color: red;
+      transition: width 0.3s;
+    }
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+    .nav-link.active {
+      color: red;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 20px;
+    }
+
+    .container {
+      padding: 10px;
+    }
+
+.gambar-besar {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px; /* atau 0 jika ingin sangat rapat */
+}
+.gambar-besar img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+    .gambar-kecil {
+      display: flex;
+      overflow-x: auto;
+      gap: 10px;
+      padding-bottom: 10px;
+    }
+
+    .item-gambar {
+      flex: 0 0 auto;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .item-gambar img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border: 1px solid #999;
+      border-radius: 6px;
+    }
+
+    .keterangan {
+      font-size: 12px;
+      margin-top: 3px;
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.8);
+      z-index: 999;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="beranda.html" class="nav-link">Beranda</a>
+    <a href="galeri.html" class="nav-link active">Galeri</a>
+    <a href="media.html" class="nav-link">Media</a>
+    <a href="produk.html" class="nav-link">Produk</a>
+    <a href="tentang.html" class="nav-link">Tentang</a>
+    <a href="kontak.html" class="nav-link">Kontak</a>
+  </div>
+
+  <h1>Galeri Khasbu Otomatis</h1>
+
+  <div class="container">
+    <div class="gambar-besar">
+      <img src="gambar1.jpg" alt="Gambar Besar" id="gambarUtama" onclick="bukaLightbox(this.src)">
+    </div>
+
+    <div class="gambar-kecil">
+      <div class="item-gambar" onclick="tampilkanGambar('gambar1.jpg')">
+        <img src="gambar1.jpg" alt="Gambar 1">
+        <div class="keterangan">Produk 1</div>
+      </div>
+      <div class="item-gambar" onclick="tampilkanGambar('gambar2.jpg')">
+        <img src="gambar2.jpg" alt="Gambar 2">
+        <div class="keterangan">Produk 2</div>
+      </div>
+      <div class="item-gambar" onclick="tampilkanGambar('gambar3.jpg')">
+        <img src="gambar3.jpg" alt="Gambar 3">
+        <div class="keterangan">Produk 3</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lightbox" id="lightbox" onclick="tutupLightbox()">
+    <img src="" id="gambarFull">
+  </div>
+
+  <script>
+    function tampilkanGambar(src) {
+      document.getElementById('gambarUtama').src = src;
+    }
+
+    function bukaLightbox(src) {
+      document.getElementById('lightbox').style.display = 'flex';
+      document.getElementById('gambarFull').src = src;
+    }
+
+    function tutupLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

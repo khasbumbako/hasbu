@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title> Produk dan Harga Toko Khasbu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0px;
+      background: #f9f9f9;
+      color: #333;
+    }
+    
+    .navbar {
+      background-color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      gap: 20px;
+      border-bottom: 3px solid #040403dd;
+      font-family: sans-serif;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      50% {
+        text-shadow: 0 0 10px white, 0 0 30px #ffcc00;
+      }
+      
+      
+    }
+    .nav-link {
+      position: relative;
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+      padding-bottom: 5px;
+      transition: color 0.3s ease;
+    }
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 3px;
+      width: 0%;
+      background-color: red;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover {
+      color: red;
+    }
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+    .nav-link.active {
+      color: red;
+    }
+    .hero {
+      text-align: center;
+      padding: 20px 20px;
+    }
+    
+    
+
+h1 {
+  text-align: center;
+  margin: 10px; /* atau sesuaikan dengan yang kamu mau */
+}
+
+h3 {
+  text-align: center;
+  margin: 5px 10px; /* atas-bawah 5px, kanan-kiri 10px */
+  padding: 0 20px;  /* atas-bawah 0px, kanan-kiri 20px */
+}
+
+    .katalog {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .produk {
+      position: relative;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 15px;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .produk:hover {
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    .produk img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .nama-produk {
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    .harga {
+      color: #e91e63;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .deskripsi {
+      font-size: 14px;
+      color: #666;
+      min-height: 40px;
+    }
+
+    /* Modal untuk gambar besar */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 80vh;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #000;
+    }
+
+    .modal:target {
+      display: flex;
+    }
+
+    .close-btn {
+      position: fixed;
+      top: 20px;
+      right: 30px;
+      font-size: 40px;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+  </style>
+</head>
+<body>
+  
+    <!-- NAVBAR -->
+  <div class="navbar">
+    <a href="beranda.html" class="nav-link ">Beranda</a>
+   <a href="Galeri.html" class="nav-link">Galeri</a>
+    <a href="media.html" class="nav-link">Media</a>
+     <a href="produk.html" class="nav-link active">Produk
+    <a href="tentang.html" class="nav-link">Tentang</a>
+    <a href="kontak.html" class="nav-link">Kontak</a>
+  </div>
+  
+
+<h1>Daftar Harga Produk khasbu </h1>
+<h3>Harga belum diperbarui. Untuk info lebih lengkap, <br> silakan hubungi kami lewat WhatsApp.</h3></h3>
+  <div class="katalog">
+
+    <!-- Produk 1 -->
+    <div id="modal1" class="modal">
+      <a href="#" class="close-btn" aria-label="Tutup">&times;</a>
+      <img src="gambar1.jpg" alt="Produk 1 Besar" />
+    </div>
+    <div class="produk">
+      <a href="#modal1" aria-label="Lihat detail Produk 1">
+        <img src="gambar1.jpg" alt="Produk 1" />
+        <div class="nama-produk">Produk 1</div>
+        <div class="harga">Rp 100.000</div>
+        <div class="deskripsi">Kualitas premium, bahan katun nyaman.</div>
+      </a>
+    </div>
+
+    <!-- Produk 2 -->
+    <div id="modal2" class="modal">
+      <a href="#" class="close-btn" aria-label="Tutup">&times;</a>
+      <img src="gambar2.jpg" alt="Produk 2 Besar" />
+    </div>
+    <div class="produk">
+      <a href="#modal2" aria-label="Lihat detail Produk 2">
+        <img src="gambar2.jpg" alt="Produk 2" />
+        <div class="nama-produk">Produk 2</div>
+        <div class="harga">Rp 85.000 (Diskon Spesial)</div>
+        <div class="deskripsi">Stok terbatas, segera miliki sekarang!</div>
+      </a>
+    </div>
+
+    <!-- Produk 3 -->
+    <div id="modal3" class="modal">
+      <a href="#" class="close-btn" aria-label="Tutup">&times;</a>
+      <img src="gambar3.jpg" alt="Produk 3 Besar" />
+    </div>
+    <div class="produk">
+      <a href="#modal3" aria-label="Lihat detail Produk 3">
+        <img src="gambar3.jpg" alt="Produk 3" />
+        <div class="nama-produk">Produk 3</div>
+        <div class="harga">Rp 120.000</div>
+        <div class="deskripsi">Handmade dengan bahan terbaik.</div>
+      </a>
+    </div>
+
+    <!-- Produk 4 -->
+    <div id="modal4" class="modal">
+      <a href="#" class="close-btn" aria-label="Tutup">&times;</a>
+      <img src="gambar4.jpg" alt="Produk 4 Besar" />
+    </div>
+    <div class="produk">
+      <a href="#modal4" aria-label="Lihat detail Produk 4">
+        <img src="gambar4.jpg" alt="Produk 4" />
+        <div class="nama-produk">Produk 4</div>
+        <div class="harga">Rp 75.000</div>
+        <div class="deskripsi">Desain elegan dan nyaman dipakai.</div>
+      </a>
+    </div>
+
+    <!-- Produk 5 -->
+    <div id="modal5" class="modal">
+      <a href="#" class="close-btn" aria-label="Tutup">&times;</a>
+      <img src="gambar5.jpg" alt="Produk 5 Besar" />
+    </div>
+    <div class="produk">
+      <a href="#modal5" aria-label="Lihat detail Produk 5">
+        <img src="gambar5.jpg" alt="Produk 5" />
+        <div class="nama-produk">Produk 5</div>
+        <div class="harga">Rp 150.000</div>
+        <div class="deskripsi">Material tahan lama dan berkualitas tinggi.</div>
+      </a>
+    </div>
+
+    <!-- Produk 6 -->
+    <div id="modal6" class="modal">
+      <a href="#" class="close-btn" aria-label="Tutup">&times;</a>
+      <img src="gambar6.jpg" alt="Produk 6 Besar" />
+    </div>
+    <div class="produk">
+      <a href="#modal6" aria-label="Lihat detail Produk 6">
+        <img src="gambar6.jpg" alt="Produk 6" />
+        <div class="nama-produk">Produk 6</div>
+        <div class="harga">Rp 95.000</div>
+        <div class="deskripsi">Warna cerah, cocok untuk segala usia.</div>
+      </a>
+    </div>
+
+    <!-- Produk 7 -->
+    <div id="modal7" class="modal">
+      <a href="#" class="close-btn" aria-label="Tutup">&times;</a>
+      <img src="gambar7.jpg" alt="Produk 7 Besar" />
+    </div>
+    <div class="produk">
+      <a href="#modal7" aria-label="Lihat detail Produk 7">
+        <img src="gambar7.jpg" alt="Produk 7" />
+        <div class="nama-produk">Produk 7</div>
+        <div class="harga">Rp 110.000</div>
+        <div class="deskripsi">Cocok untuk hadiah spesial.</div>
+      </a>
+    </div>
+
+    <!-- Produk 8 -->
+    <div id="modal8" class="modal">
+      <a href="#" class="close-btn" aria-label="Tutup">&times;</a>
+      <img src="gambar8.jpg" alt="Produk 8 Besar" />
+    </div>
+    <div class="produk">
+      <a href="#modal8" aria-label="Lihat detail Produk 8">
+        <img src="gambar8.jpg" alt="Produk 8" />
+        <div class="nama-produk">Produk 8</div>
+        <div class="harga">Rp 130.000</div>
+        <div class="deskripsi">Desain modern dan unik.</div>
+      </a>
+    </div>
+
+    <!-- Produk 9 -->
+    <div id="modal9" class="modal">
+      <a href="#" class="close-btn" aria-label="Tutup">&times;</a>
+      <img src="gambar9.jpg" alt="Produk 9 Besar" />
+    </div>
+    <div class="produk">
+      <a href="#modal9" aria-label="Lihat detail Produk 9">
+        <img src="gambar9.jpg" alt="Produk 9" />
+        <div class="nama-produk">Produk 9</div>
+        <div class="harga">Rp 70.000</div>
+        <div class="deskripsi">Nyaman dan ramah lingkungan.</div>
+      </a>
+    </div>
+
+    <!-- Produk 10 -->
+    <div id="modal10" class="modal">
+      <a href="#" class="close-btn" aria-label="Tutup">&times;</a>
+      <img src="gambar10.jpg" alt="Produk 10 Besar" />
+    </div>
+    <div class="produk">
+      <a href="#modal10" aria-label="Lihat detail Produk 10">
+        <img src="gambar10.jpg" alt="Produk 10" />
+        <div class="nama-produk">Produk 10</div>
+        <div class="harga">Rp 160.000</div>
+        <div class="deskripsi">Pilihan tepat untuk kegiatan outdoor.</div>
+      </a>
+    </div>
+
+    <!-- Produk 11 -->
+    <div id="modal11" class="modal">
+      <a href="#" class="close-btn" aria-label="Tutup">&times;</a>
+      <img src="gambar11.jpg" alt="Produk 11 Besar" />
+    </div>
+    <div class="produk">
+      <a href="#modal11" aria-label="Lihat detail Produk 11">
+        <img src="gambar11.jpg" alt="Produk 11" />
+        <div class="nama-produk">Produk 11</div>
+        <div class="harga">Rp 140.000</div>
+        <div class="deskripsi">Desain klasik, cocok untuk sehari-hari.</div>
+      </a>
+    </div>
+
+    <!-- Produk 12 -->
+    <div id="modal12" class="modal">
+      <a href="#" class="close-btn" aria-label="Tutup">&times;</a>
+      <img src="gambar12.jpg" alt="Produk 12 Besar" />
+    </div>
+    <div class="produk">
+      <a href="#modal12" aria-label="Lihat detail Produk 12">
+        <img src="gambar12.jpg" alt="Produk 12" />
+        <div class="nama-produk">Produk 12</div>
+        <div class="harga">Rp 90.000</div>
+        <div class="deskripsi">Bahan lembut dan nyaman dipakai.</div>
+      </a>
+    </div>
+
+    <!-- Produk 13 -->
+    <div id="modal13" class="modal">
+      <a href="#" class="close-btn" aria-label="Tutup">&times;</a>
+      <img src="gambar13.jpg" alt="Produk 13 Besar" />
+    </div>
+    <div class="produk">
+      <a href="#modal13" aria-label="Lihat detail Produk 13">
+        <img src="gambar13.jpg" alt="Produk 13" />
+        <div class="nama-produk">Produk 13</div>
+        <div class="harga">Rp 105.000</div>
+        <div class="deskripsi">Warna netral, cocok untuk segala suasana.</div>
+      </a>
+    </div>
+
+    <!-- Produk 14 -->
+    <div id="modal14" class="modal">
+      <a href="#" class="close-btn" aria-label="Tutup">&times;</a>
+      <img src="gambar14.jpg" alt="Produk 14 Besar" />
+    </div>
+    <div class="produk">
+      <a href="#modal14" aria-label="Lihat detail Produk 14">
+        <img src="gambar14.jpg" alt="Produk 14" />
+        <div class="nama-produk">Produk 14</div>
+        <div class="hargaa
+        
+        <script>
+  <!-- NAVBAR SCRIPT -->
+  <script>
+    const links = document.querySelectorAll('.nav-link');
+    links.forEach(link => {
+      link.addEventListener('click', function() {
+        links.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
+
+        
+        </body>
+        </html>
