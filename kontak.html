@@ -4,41 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Kontak - Jaya Mbako</title>
 
   <style>
-  
-        body {
+    body {
       margin: 0;
       font-family: 'Arial', sans-serif;
-      background-color: #;
-      color: #;
+      background-color: #fff8dc;
+      color: #333;
     }
-  
-      .navbar {
+
+    .navbar {
       background-color: #fff;
       padding: 10px 20px;
       display: flex;
       gap: 20px;
-      border-bottom: 2px solid #eee;
+      border-bottom: 3px solid #040403dd;
       font-family: sans-serif;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      50% {
-        text-shadow: 0 0 10px white, 0 0 30px #ffcc00;
-      }
-      
-      
-    }
-     .navbar {
-      background-color: #fff;
-      padding: 10px 20px;
-      display: flex;
-      gap: 20px;
-      border-bottom: 3px solid #040403dd;  
-      font-family: sans-serif;
-      position: sticky;
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -80,17 +62,56 @@
       width: 100%;
     }
 
-     p {
-      
+    .kontak-container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #4e342e;
+    }
+
+    .kontak-item {
+      background: #fff;
+      border-left: 5px solid #4e342e;
       padding: 15px;
       margin: 10px 0;
-  
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
+
+    .kontak-item img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .kontak-item a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    .sepanduk img {
+      width: 450px;
+      height: 150px;
+    }
+    
+@media (min-width: 600px) and (max-width: 800px) {
+  .sepanduk img {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+    
   </style>
 </head>
 <body>
-    <div class="navbar">
-    <a href="beranda.html" class="nav-link ">Beranda</a>
+  <div class="navbar">
+    <a href="index.html" class="nav-link">Beranda</a>
     <a href="galeri.html" class="nav-link">Galeri</a>
     <a href="media.html" class="nav-link">Media</a>
     <a href="produk.html" class="nav-link">Produk</a>
@@ -98,13 +119,33 @@
     <a href="kontak.html" class="nav-link active">Kontak</a>
   </div>
 
+  <div class="kontak-container">
+    <h1>Kontak Jaya Mbako</h1>
 
-  
-  
-  <div> 
-  <p>hp 085217774931</p>
+    <div class="kontak-item">
+      <img src="whatsapp.png" alt="WhatsApp">
+      <a href="https://wa.me/6285283907654?text=Halo%20Mas%20Hasbu%2C%20aku%20mau%20beli%20tembako" target="_blank">
+        WhatsApp: 0852-8390-7654
+      </a>
+    </div>
+
+    <div class="kontak-item">
+      <img src="facebook.png" alt="Facebook">
+      <a href="https://www.facebook.com/share/1FkXCsmney/" target="_blank">
+        Facebook: jaya mbako
+      </a>
+    </div>
+
+    <div class="kontak-item">
+      <img src="instagram.png" alt="Instagram">
+      <a href="https://www.instagram.com/hasbu.jaya" target="_blank">
+        Instagram: @hasbu.jaya
+      </a>
+    </div>
+
+    <div  class="sepanduk">
+    <img src="gambar5.jpg" alt="Foto Ismail" /> </div>
   </div>
-<script></script>
 
 </body>
 </html>
